@@ -19,7 +19,7 @@ public class PlayerShooter : MonoBehaviour
         {
             var bullet = Instantiate(_bulletPrefab[0], _muzzlePos.position, Quaternion.LookRotation(transform.forward, _player.mousePos));
             var bulletRb = bullet.GetComponent<Rigidbody2D>();
-            var direction = (_player.mousePos - (Vector2)_muzzlePos.position).normalized;
+            var direction = (_player.mousePos - (Vector2)_player.transform.position).normalized;
             bulletRb.velocity = _bulletSpeed * direction;
             Destroy(bullet,2f);
         }

@@ -16,8 +16,8 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.localRotation = Quaternion.LookRotation(transform.forward, mousePos - (Vector2)transform.position);
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        transform.localRotation = Quaternion.LookRotation(transform.forward, mousePos);
     }
 
     void FixedUpdate()
