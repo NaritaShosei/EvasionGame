@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody2D _rb;
     [SerializeField] float _moveSpeed = 5;
+    [SerializeField] GameObject _blood;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +21,20 @@ public class PlayerController : MonoBehaviour
         _rb.velocity = new Vector2(hMove, vMove);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            Death();
+        }
+    }
+
     private void Death()
     {
         Debug.Log("YOU DIED");
+        var blood = Instantiate(_blood, transform.position, Quaternion.identity);
+        var bloodParticle = blood.GetComponent<ParticleSystem>();
+        bloodParticle.Simulate(1);
+        bloodParticle.Play();
     }
 }
