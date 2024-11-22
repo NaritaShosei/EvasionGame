@@ -13,21 +13,20 @@ public class EnemyBase : MonoBehaviour
     void Start()
     {
         _targetPos = transform.position;
-        Move();
+        Move(_moveSpeed);
     }
 
-    private void Move()
+    private void Move(float speed)
     {
         var pos = _targetPos;
-        var count = 0;
         while (Vector2.Distance(pos, _targetPos) < 8)
         {
             _targetPos.x = Random.Range(_moveLimitPos[0].position.x, _moveLimitPos[1].position.x);
             _targetPos.y = Random.Range(_moveLimitPos[0].position.y, _moveLimitPos[1].position.y);
         }
         var distance = Vector2.Distance(_targetPos, transform.position);
-        var duration = distance / _moveSpeed;
-        transform.DOMove(_targetPos, duration).SetEase(Ease.Linear).OnComplete(() => Move());
+        var duration = distance / speed;
+        transform.DOMove(_targetPos, duration).SetEase(Ease.Linear).OnComplete(() => Move(speed));
     }
 
 }
