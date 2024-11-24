@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,14 +11,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject _blood;
     [SerializeField] List<Transform> _moveLimitPos;
     bool _isDead;
+    [SerializeField] UnityEvent _deathEvent;
 
-    // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!_isDead)
@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
             bloodParticle.Simulate(1);
             bloodParticle.Play();
             _rb.velocity = Vector2.zero;
+            _deathEvent.Invoke();
         }
     }
 }

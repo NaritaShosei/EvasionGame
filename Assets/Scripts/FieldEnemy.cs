@@ -12,14 +12,12 @@ public class FieldEnemy : MonoBehaviour
     [SerializeField] CircleCollider2D _collider;
     PlayerController _player;
 
-    // Start is called before the first frame update
     void Start()
     {
         _player = FindObjectOfType<PlayerController>();
         _timer = Time.time;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Time.time > _timer + _interval)
@@ -45,7 +43,7 @@ public class FieldEnemy : MonoBehaviour
     IEnumerator Invisible()
     {
         yield return new WaitForSeconds(0.5f);
-        Debug.Log("Attack8second");
+        Debug.Log("Invisible");
         _collider.enabled = false;
         _sr.DOFade(0, 0.5f).OnComplete(() => _sr.color = new Color(1, 1, 1, 0));
         _timer = Time.time;

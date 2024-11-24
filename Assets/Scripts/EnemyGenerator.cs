@@ -11,13 +11,11 @@ public class EnemyGenerator : MonoBehaviour
     List<GameObject> _enemyList = new();
     [SerializeField] int _maxEnemyCount;
 
-    // Start is called before the first frame update
     void Start()
     {
         _timer = Time.time;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Time.time > _timer + _interval)

@@ -9,7 +9,6 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] float _moveSpeed;
     Vector2 _targetPos;
 
-    // Start is called before the first frame update
     void Start()
     {
         _targetPos = transform.position;
