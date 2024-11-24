@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        _text.text = _timer.ToString("00m00s.00ms");
+        _text.text = _timer.ToString();
         if (!_isPlayerDead)
         {
             _timer += Time.deltaTime;

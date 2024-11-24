@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class EnemyBase : MonoBehaviour
+public class NormalEnemy : MonoBehaviour
 {
     [SerializeField] List<Transform> _moveLimitPos;
     [SerializeField] float _moveSpeed;
