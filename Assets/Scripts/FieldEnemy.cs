@@ -44,8 +44,12 @@ public class FieldEnemy : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         Debug.Log("Invisible");
-        _collider.enabled = false;
-        _sr.DOFade(0, 0.5f).OnComplete(() => _sr.color = new Color(1, 1, 1, 0));
+        _sr.DOFade(0, 0.5f).OnComplete(() =>
+        {
+            _sr.color = new Color(1, 1, 1, 0);
+            _collider.enabled = false;
+        });
+
         _timer = Time.time;
     }
 }

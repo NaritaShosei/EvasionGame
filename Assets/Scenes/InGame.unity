@@ -462,10 +462,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ad6bedb5ec1f0142b32d65574fdc8c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interval: 5
+  _normalSpawnInterval: 5
+  _targetSpawnInterval: 8
   _sr: {fileID: 0}
   _enemy: {fileID: 3659604674667044834, guid: 9bc43cfe0101c3d418edf7cc3df17b4c, type: 3}
+  _targetEnemy: {fileID: 3659604674667044834, guid: 9bc43cfe0101c3d418edf7cc3df17b4c, type: 3}
   _maxEnemyCount: 5
+  _player: {fileID: 2067014768}
 --- !u!4 &950095582
 Transform:
   m_ObjectHideFlags: 0
