@@ -466,7 +466,7 @@ MonoBehaviour:
   _targetSpawnInterval: 8
   _sr: {fileID: 0}
   _enemy: {fileID: 3659604674667044834, guid: 9bc43cfe0101c3d418edf7cc3df17b4c, type: 3}
-  _targetEnemy: {fileID: 3659604674667044834, guid: 9bc43cfe0101c3d418edf7cc3df17b4c, type: 3}
+  _targetEnemy: {fileID: 6212957247674791000, guid: ababd5649151c784dbde8869faf7722c, type: 3}
   _maxEnemyCount: 5
   _player: {fileID: 2067014768}
 --- !u!4 &950095582
@@ -1047,7 +1047,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 802249599436205431, guid: 2396650e9e1e33348ad1873e8a831506, type: 3}
       propertyPath: m_Name
-      value: GameObject (1)
+      value: MoveLimit -Right & Up-
       objectReference: {fileID: 0}
     - target: {fileID: 3176142998576021206, guid: 2396650e9e1e33348ad1873e8a831506, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1144,7 +1144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6718361461544459685, guid: d3398823bc99a8741bfa785756b93e95, type: 3}
       propertyPath: m_Name
-      value: GameObject
+      value: MoveLimit -Left & Down-
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

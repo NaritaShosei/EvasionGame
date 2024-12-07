@@ -8,6 +8,10 @@ public class OneWayEnemy : MonoBehaviour
 
     void Update()
     {
-        transform.position += transform.up * _moveSpeed * Time.deltaTime;
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).position += transform.GetChild(i).up * _moveSpeed * Time.deltaTime;
+        }
+
     }
 }
