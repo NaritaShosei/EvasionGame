@@ -47,7 +47,8 @@ public class EnemyGenerator : MonoBehaviour
         if (_player)
         {
             var dir = _player.transform.position - transform.position;
-            Instantiate(_targetEnemy, transform.position, Quaternion.LookRotation(Vector3.forward, dir));
+            var enemy = Instantiate(_targetEnemy, transform.position, Quaternion.LookRotation(Vector3.forward, dir));
+            Destroy(enemy, 4);
         }
     }
 }

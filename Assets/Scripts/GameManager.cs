@@ -17,7 +17,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        _text.text = $"{Mathf.Floor(_timer / 60)}•ª{_timer % 60}•b";
+        if (_text != null)
+        {
+            _text.text = $"{Mathf.Floor(_timer / 60)}•ª{(_timer % 60).ToString("00.00")}•b";
+        }
         if (!_isPlayerDead)
         {
             _timer += Time.deltaTime;
